@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d12">
+  <title>CLASH: Races at the Frontline</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail">
+      <a class="brand-mark" href="#home" aria-label="Clash home">C<span>•</span></a>
+      <nav aria-label="Main navigation">
+        <a class="rail-link active" href="#home" aria-label="Command"><span>⌂</span></a>
+        <a class="rail-link" href="#species" aria-label="Species"><span>◎</span></a>
+        <a class="rail-link" href="#armory" aria-label="Armory"><span>⌁</span></a>
+        <a class="rail-link" href="#intel" aria-label="Intel"><span>▤</span></a>
+      </nav>
+      <div class="rail-bottom"><span class="online-dot"></span><span>ONLINE</span></div>
+    </aside>
+
+    <main id="home">
+      <header class="topbar">
+        <div class="wordmark">CLASH <span>RACES AT THE FRONTLINE</span></div>
+        <div class="top-status"><span class="status-pip"></span> GLOBAL NETWORK <b>●</b> <span class="player-level">LVL 01</span></div>
+      </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-image" aria-hidden="true"></div>
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span> FRONTLINE DIRECTIVE <span class="eyebrow-id">// 001</span></div>
+          <h1 id="hero-title">THE CALLASO<br><em>BATTLE</em></h1>
+          <p class="hero-copy">Earth is no longer alone. Choose your lineage.<br>Hold the line. Decide who inherits the stars.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" id="deploy-btn"><span>▶</span> DEPLOY TO BATTLE</button>
+            <button class="button button-quiet" id="briefing-btn">MISSION BRIEFING <span>↗</span></button>
+          </div>
+        </div>
+        <div class="hero-meta"><span>SECTOR 07 — CALLASO</span><span>THREAT LEVEL <b class="threat">CRITICAL</b></span><span>EST. YEAR 2189</span></div>
+        <div class="hero-counter"><b>01</b><span> / 04<br>ACTIVE FRONTS</span></div>
+      </section>
+
+      <section class="command-grid">
+        <div class="panel species-panel" id="species">
+          <div class="section-heading"><div><span class="section-kicker">01 / IDENTIFY</span><h2>CHOOSE YOUR SPECIES</h2></div><span class="heading-count">4 LINEAGES</span></div>
+          <div class="species-list" role="listbox" aria-label="Choose a species">
+            <button class="species-card selected" data-species="Human" role="option" aria-selected="true">
+              <span class="species-portrait human">H</span><span class="species-copy"><b>HUMAN</b><small>ADAPTIVE · UNITED</small></span><span class="species-arrow">↗</span>
+            </button>
+            <button class="species-card" data-species="Grey" role="option" aria-selected="false">
+              <span class="species-portrait grey">G</span><span class="species-copy"><b>GREY</b><small>PRECISE · TELEPATHIC</small></span><span class="species-arrow">↗</span>
+            </button>
+            <button class="species-card" data-species="Reptilian" role="option" aria-selected="false">
+              <span class="species-portrait reptilian">R</span><span class="species-copy"><b>REPTILIAN</b><small>RESILIENT · TACTICAL</small></span><span class="species-arrow">↗</span>
+            </button>
+            <button class="species-card" data-species="Insectoid" role="option" aria-selected="false">
+              <span class="species-portrait insectoid">I</span><span class="species-copy"><b>INSECTOID</b><small>AGILE · SYNAPTIC</small></span><span class="species-arrow">↗</span>
+            </button>
+          </div>
+          <div class="species-note"><span class="note-mark">＋</span><span>MORE LINEAGES WILL JOIN THE FRONTLINE</span><span class="note-lock">IN DEVELOPMENT</span></div>
+        </div>
+
+        <div class="panel match-panel">
+          <div class="section-heading"><div><span class="section-kicker">02 / ENGAGE</span><h2>SELECT A BATTLE</h2></div><button class="icon-button" id="refresh-btn" aria-label="Refresh matches">↻</button></div>
+          <div class="mode-grid" aria-label="Battle sizes">
+            <button class="mode-card" data-mode="5v5"><span>01</span><b>5 <i>vs</i> 5</b><small>SKIRMISH</small></button>
+            <button class="mode-card" data-mode="10v10"><span>02</span><b>10 <i>vs</i> 10</b><small>FIRETEAM</small></button>
+            <button class="mode-card" data-mode="15v15"><span>03</span><b>15 <i>vs</i> 15</b><small>WARFRONT</small></button>
+            <button class="mode-card" data-mode="20v20"><span>04</span><b>20 <i>vs</i> 20</b><small>CALLASO BATTLE</small></button>
+            <button class="mode-card mode-wide" data-mode="25v25"><span>05</span><b>25 <i>vs</i> 25</b><small>GLOBAL CONFLICT <span class="live-tag">NEW</span></small></button>
+          </div>
+          <div class="match-actions"><button class="button button-primary queue-button" id="queue-btn">FIND RANDOM MATCH <span>→</span></button><button class="button button-outline" id="room-btn">＋ CREATE ROOM</button></div>
+          <div class="match-foot"><span><i class="tiny-green"></i> <b id="online-count">2,418</b> OPERATIVES ONLINE</span><span>REGION <b>GLOBAL AUTO</b></span></div>
+        </div>
+      </section>
+
+      <section class="bottom-strip" id="intel">
+        <div class="strip-title"><span class="section-kicker">FIELD INTEL</span><b>FRONTLINE STATUS</b></div>
+        <div class="intel-item"><span class="intel-icon">⌖</span><span><small>ACTIVE OPERATION</small><b>CALLASO — DUSTHAVEN</b></span><span class="intel-live">LIVE</span></div>
+        <div class="intel-item"><span class="intel-icon">◉</span><span><small>FACTION BALANCE</small><b>HUMAN <i>51%</i> / ALLIANCE <i>49%</i></b></span><span class="balance-bar"><i></i></span></div>
+        <div class="intel-item intel-map"><span class="map-lines"></span><span><small>NEXT DEPLOYMENT</small><b id="intel-mode">SELECT A BATTLE SIZE</b></span></div>
+      </section>
+      <footer><span>CLASH RACES AT THE FRONTLINE <b>© 2189</b></span><span>PROTOTYPE BUILD 0.1.0 <i>— CONNECTING WORLDS</i></span></footer>
+    </main>
+  </div>
+
+  <dialog id="action-dialog" class="action-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form>
+    <div class="dialog-kicker">CALLASO COMMAND // SECURE CHANNEL</div>
+    <h2 id="dialog-title">DEPLOYMENT</h2>
+    <div id="dialog-body"></div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
