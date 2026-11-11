@@ -6,6 +6,7 @@ const dialogBody = document.querySelector('#dialog-body');
 const intelMode = document.querySelector('#intel-mode');
 let selectedMode = '';
 let selectedSpecies = 'Human';
+let humanVariant = 'Black';
 
 modeButtons.forEach((button) => button.addEventListener('click', () => {
   modeButtons.forEach((item) => item.classList.remove('active'));
@@ -23,6 +24,22 @@ speciesButtons.forEach((button) => button.addEventListener('click', () => {
   button.setAttribute('aria-selected', 'true');
   selectedSpecies = button.dataset.species;
   toast(`${selectedSpecies.toUpperCase()} LINEAGE SELECTED`);
+}));
+
+document.querySelectorAll('.variant-button').forEach((button) => button.addEventListener('click', () => {
+  document.querySelectorAll('.variant-button').forEach((item) => {
+    item.classList.remove('active');
+    item.setAttribute('aria-pressed', 'false');
+  });
+  button.classList.add('active');
+  button.setAttribute('aria-pressed', 'true');
+  humanVariant = button.dataset.variant;
+  selectedSpecies = `Human · ${humanVariant} operator`;
+  speciesButtons.forEach((item) => {
+    item.classList.toggle('selected', item.dataset.species === 'Human');
+    item.setAttribute('aria-selected', item.dataset.species === 'Human' ? 'true' : 'false');
+  });
+  toast(`${humanVariant.toUpperCase()} HUMAN OPERATOR SELECTED`);
 }));
 
 document.querySelector('#queue-btn').addEventListener('click', () => {
