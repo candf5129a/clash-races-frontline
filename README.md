@@ -4,7 +4,7 @@ An early, responsive command-screen prototype for a cross-species multiplayer FP
 
 ## Preview
 
-Open `index.html` in a browser. No build step or package install is required.
+Open `index.html` in a browser, or run `node preview-server.cjs` and visit `http://127.0.0.1:4173` for a local preview. No package install is required.
 
 ## Prototype interactions
 
