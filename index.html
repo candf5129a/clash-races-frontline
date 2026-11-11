@@ -3,100 +3,138 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d12">
-  <title>CLASH: Races at the Frontline</title>
+  <meta name="theme-color" content="#07090e">
+  <title>CLASH // Callaso Front</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="rail">
-      <a class="brand-mark" href="#home" aria-label="Clash home">C<span>•</span></a>
-      <nav aria-label="Main navigation">
-        <a class="rail-link active" href="#home" aria-label="Command"><span>⌂</span></a>
-        <a class="rail-link" href="#species" aria-label="Species"><span>◎</span></a>
-        <a class="rail-link" href="#armory" aria-label="Armory"><span>⌁</span></a>
-        <a class="rail-link" href="#intel" aria-label="Intel"><span>▤</span></a>
+  <div class="shell">
+    <aside class="side-rail">
+      <a class="brand" href="#command" aria-label="CLASH command"><span class="brand-sigil">C<span>×</span></span><small>FRONTLINE</small></a>
+      <div class="rail-caption">COMMAND DECK</div>
+      <nav class="main-nav" aria-label="Game sections">
+        <button class="nav-item active" data-page="command"><span class="nav-icon">⌂</span><span>COMMAND</span><b class="nav-dot"></b></button>
+        <button class="nav-item" data-page="training"><span class="nav-icon">⊕</span><span>TRAINING GROUND</span><b class="nav-dot"></b></button>
+        <button class="nav-item" data-page="species"><span class="nav-icon">◈</span><span>OPERATIVES</span><b class="nav-count">20</b></button>
+        <button class="nav-item" data-page="arsenal"><span class="nav-icon">⌁</span><span>ARSENAL</span><b class="nav-count">50</b></button>
+        <button class="nav-item" data-page="social"><span class="nav-icon">⌘</span><span>SOCIAL</span><b class="nav-badge">3</b></button>
       </nav>
-      <div class="rail-bottom"><span class="online-dot"></span><span>ONLINE</span></div>
+      <div class="rail-event"><span class="pulse"></span><small>LIVE EVENT</small><b>CALLASO: FIRST CONTACT</b><span class="event-progress"><i></i></span><small>2,400 / 5,000 XP</small></div>
+      <div class="rail-bottom"><div class="rank-chip">▰ <span>RECRUIT I</span></div><div class="rail-user"><span class="user-avatar">K</span><span><b>KACHI</b><small>LEVEL 01</small></span><button aria-label="Open player options">···</button></div></div>
     </aside>
 
-    <main id="home">
+    <main class="main-area">
       <header class="topbar">
-        <div class="wordmark">CLASH <span>RACES AT THE FRONTLINE</span></div>
-        <div class="top-status"><span class="status-pip"></span> GLOBAL NETWORK <b>●</b> <span class="player-level">LVL 01</span></div>
+        <div class="breadcrumb"><span>CALLASO FRONT</span><b> / </b><strong id="page-label">COMMAND</strong></div>
+        <div class="topbar-right">
+          <div class="network-status"><i></i> GLOBAL NETWORK <b>STABLE</b></div>
+          <button class="top-icon" id="notifications-btn" aria-label="Notifications">♢<span class="notification-pip"></span></button>
+          <button class="top-icon friends-open" data-page="social" aria-label="Friends">♧<span class="friend-count">3</span></button>
+          <button class="currency-chip" id="reward-btn"><span>✧</span> 1,250 <small>CR</small><i>＋</i></button>
+        </div>
       </header>
 
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-image" aria-hidden="true"></div>
-        <div class="hero-scrim"></div>
-        <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-line"></span> FRONTLINE DIRECTIVE <span class="eyebrow-id">// 001</span></div>
-          <h1 id="hero-title">THE CALLASO<br><em>BATTLE</em></h1>
-          <p class="hero-copy">Earth is no longer alone. Choose your lineage.<br>Hold the line. Decide who inherits the stars.</p>
-          <div class="hero-actions">
-            <button class="button button-primary" id="deploy-btn"><span>▶</span> DEPLOY TO BATTLE</button>
-            <button class="button button-quiet" id="briefing-btn">MISSION BRIEFING <span>↗</span></button>
+      <section class="page active" id="page-command" aria-label="Command lobby">
+        <div class="lobby-hero">
+          <div class="hero-backdrop"></div><div class="hero-grid"></div>
+          <div class="hero-copy">
+            <div class="eyebrow"><span></span> SECTOR 07 // FRONTLINE ACTIVE</div>
+            <h1>THE <em>CALLASO</em><br>BATTLE</h1>
+            <p>The stars are contested. Your species is your strength.<br>Choose your operative. Change the future.</p>
+            <div class="hero-cta"><button class="cta-primary" data-page="training">ENTER TRAINING GROUND <b>↗</b></button><button class="cta-ghost" id="quick-match">QUICK DEPLOY <span>⌁</span></button></div>
+            <div class="hero-foot"><span><i class="live-dot"></i> SEASON 01 // FIRST CONTACT</span><span>EARTH YEAR 2189</span></div>
           </div>
-        </div>
-        <div class="hero-meta"><span>SECTOR 07 — CALLASO</span><span>THREAT LEVEL <b class="threat">CRITICAL</b></span><span>EST. YEAR 2189</span></div>
-        <div class="hero-counter"><b>01</b><span> / 04<br>ACTIVE FRONTS</span></div>
-      </section>
-
-      <section class="command-grid">
-        <div class="panel species-panel" id="species">
-          <div class="section-heading"><div><span class="section-kicker">01 / IDENTIFY</span><h2>CHOOSE YOUR SPECIES</h2></div><span class="heading-count">4 LINEAGES</span></div>
-          <div class="species-list" role="listbox" aria-label="Choose a species">
-            <button class="species-card selected" data-species="Human" role="option" aria-selected="true">
-              <span class="species-portrait human">H</span><span class="species-copy"><b>HUMAN</b><small>ADAPTIVE · UNITED</small></span><span class="species-arrow">↗</span>
-            </button>
-            <button class="species-card" data-species="Grey" role="option" aria-selected="false">
-              <span class="species-portrait grey">G</span><span class="species-copy"><b>GREY</b><small>PRECISE · TELEPATHIC</small></span><span class="species-arrow">↗</span>
-            </button>
-            <button class="species-card" data-species="Reptilian" role="option" aria-selected="false">
-              <span class="species-portrait reptilian">R</span><span class="species-copy"><b>REPTILIAN</b><small>RESILIENT · TACTICAL</small></span><span class="species-arrow">↗</span>
-            </button>
-            <button class="species-card" data-species="Insectoid" role="option" aria-selected="false">
-              <span class="species-portrait insectoid">I</span><span class="species-copy"><b>INSECTOID</b><small>AGILE · SYNAPTIC</small></span><span class="species-arrow">↗</span>
-            </button>
+          <div class="hero-stage" aria-label="CLASH armored operative showcase">
+            <div class="stage-ring ring-one"></div><div class="stage-ring ring-two"></div><div class="stage-beam"></div>
+            <div class="hero-operative"><div class="operator-aura"></div><svg viewBox="0 0 320 460" role="img" aria-label="Original futuristic armored human operative illustration">
+              <defs><linearGradient id="armor" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d0dce7"/><stop offset=".3" stop-color="#566372"/><stop offset=".63" stop-color="#202834"/><stop offset="1" stop-color="#0c121a"/></linearGradient><linearGradient id="glow" x1="0" x2="1"><stop stop-color="#51ffe1"/><stop offset="1" stop-color="#c7ff4c"/></linearGradient><linearGradient id="visor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#85ffe9"/><stop offset="1" stop-color="#5588a9"/></linearGradient></defs>
+              <ellipse cx="160" cy="438" rx="96" ry="13" fill="#a4ffd2" opacity=".14"/><path d="M122 83 160 58l38 24 18 28-10 51-22 23h-48l-22-23-10-51z" fill="url(#armor)" stroke="#a7b9c8" stroke-width="3"/><path d="m113 112 47-16 47 16-9 25-38 13-38-13z" fill="#151e2a" stroke="#6b8795" stroke-width="3"/><path d="m118 118 42-12 42 12-7 12-35 11-35-11z" fill="url(#visor)" opacity=".85"/><path d="m97 164 63-17 63 17 29 50-14 85-31 33-47 14-47-14-31-33-14-85z" fill="url(#armor)" stroke="#a7b9c8" stroke-width="3"/><path d="m120 176 40-16 40 16 13 41-18 35h-70l-18-35z" fill="#121923" stroke="#4f6571" stroke-width="3"/><path d="m138 181 22-9 22 9 8 31-30 19-30-19z" fill="#142f35" stroke="url(#glow)" stroke-width="3"/><path d="m98 173-37 13-22 62 18 42 34-8 17-58zM222 173l37 13 22 62-18 42-34-8-17-58z" fill="url(#armor)" stroke="#8095a2" stroke-width="3"/><path d="m43 234-13 60 20 39 24-8 11-56zM277 234l13 60-20 39-24-8-11-56z" fill="#202b37" stroke="#91a4b0" stroke-width="3"/><path d="m125 337-39 29-10 51 17 16 35-6 19-61zM195 337l39 29 10 51-17 16-35-6-19-61z" fill="url(#armor)" stroke="#899da9" stroke-width="3"/><path d="m95 419-20 30 47 2 20-13-4-20zM225 419l20 30-47 2-20-13 4-20z" fill="#0b1118" stroke="#95a8b1" stroke-width="3"/><path d="m72 208-22 48 12 8 23-47M248 208l22 48-12 8-23-47" stroke="#caff50" stroke-width="4" opacity=".8"/><path d="m140 278 20-9 20 9v29l-20 12-20-12z" fill="#15242a" stroke="#caff50" stroke-width="2"/><path d="M160 284v15m-8-7h16" stroke="#caff50" stroke-width="2"/><path d="M111 89h98M105 151h110M95 317h130" stroke="#d4e3e7" opacity=".35"/>
+            </svg></div>
+            <div class="stage-caption"><span class="tiny-label">FEATURED OPERATIVE</span><b>VANGUARD // HUMAN</b><small>BLACKSTAR RECON ARMOR <i>UNCOMMON</i></small></div>
+            <div class="species-dots" aria-label="Featured species"><i class="selected"></i><i></i><i></i><i></i><i></i></div>
           </div>
-          <div class="human-variants" aria-label="Human operator appearance">
-            <span class="variant-label">HUMAN OPERATORS</span>
-            <button class="variant-button active" data-variant="Black" aria-pressed="true"><i class="operator-avatar operator-black"></i> BLACK</button>
-            <button class="variant-button" data-variant="White" aria-pressed="false"><i class="operator-avatar operator-white"></i> WHITE</button>
-          </div>
-          <div class="species-note"><span class="note-mark">＋</span><span>MORE LINEAGES WILL JOIN THE FRONTLINE</span><span class="note-lock">IN DEVELOPMENT</span></div>
+          <div class="hero-stats"><div><b id="online-total">24,819</b><small>OPERATIVES ONLINE</small></div><div><b>06<span>ms</span></b><small>YOUR PING // GLOBAL</small></div><div><b>03<span>/05</span></b><small>FRIENDS IN ACTION</small></div></div>
         </div>
 
-        <div class="panel match-panel">
-          <div class="section-heading"><div><span class="section-kicker">02 / ENGAGE</span><h2>SELECT A BATTLE</h2></div><button class="icon-button" id="refresh-btn" aria-label="Refresh matches">↻</button></div>
-          <div class="mode-grid" aria-label="Battle sizes">
-            <button class="mode-card" data-mode="5v5"><span>01</span><b>5 <i>vs</i> 5</b><small>SKIRMISH</small></button>
-            <button class="mode-card" data-mode="10v10"><span>02</span><b>10 <i>vs</i> 10</b><small>FIRETEAM</small></button>
-            <button class="mode-card" data-mode="15v15"><span>03</span><b>15 <i>vs</i> 15</b><small>WARFRONT</small></button>
-            <button class="mode-card" data-mode="20v20"><span>04</span><b>20 <i>vs</i> 20</b><small>CALLASO BATTLE</small></button>
-            <button class="mode-card mode-wide" data-mode="25v25"><span>05</span><b>25 <i>vs</i> 25</b><small>GLOBAL CONFLICT <span class="live-tag">NEW</span></small></button>
-          </div>
-          <div class="match-actions"><button class="button button-primary queue-button" id="queue-btn">FIND RANDOM MATCH <span>→</span></button><button class="button button-outline" id="room-btn">＋ CREATE ROOM</button></div>
-          <div class="match-foot"><span><i class="tiny-green"></i> <b id="online-count">2,418</b> OPERATIVES ONLINE</span><span>REGION <b>GLOBAL AUTO</b></span></div>
+        <div class="lobby-grid">
+          <section class="module deploy-module">
+            <div class="module-heading"><div><small>DEPLOYMENT CONTROL</small><h2>CHOOSE YOUR BATTLE</h2></div><span class="module-mark">01—05</span></div>
+            <div class="battle-options">
+              <button data-mode="5v5"><small>01 / CLOSE QUARTERS</small><b>5 <i>VS</i> 5</b><span>BREACH TEAM</span></button>
+              <button data-mode="10v10"><small>02 / SQUAD OPERATION</small><b>10 <i>VS</i> 10</b><span>FIRETEAM</span></button>
+              <button data-mode="15v15"><small>03 / TACTICAL FRONT</small><b>15 <i>VS</i> 15</b><span>WARFRONT</span></button>
+              <button data-mode="20v20"><small>04 / CALLASO BATTLE</small><b>20 <i>VS</i> 20</b><span>PLANETARY PUSH</span></button>
+              <button data-mode="25v25"><small>05 / ALLIANCE WAR</small><b>25 <i>VS</i> 25</b><span>GLOBAL CONFLICT <em>NEW</em></span></button>
+            </div>
+            <div class="deploy-actions"><button class="cta-primary" id="find-match">FIND RANDOM MATCH <b>→</b></button><button class="cta-ghost" id="create-room">CREATE A ROOM <span>＋</span></button><div class="mode-selection" id="mode-selection">SELECT A TEAM SIZE</div></div>
+          </section>
+
+          <section class="module reward-module">
+            <div class="module-heading"><div><small>LIVE OPERATIONS</small><h2>YOUR NEXT REWARD</h2></div><button class="small-arrow" id="reward-next" aria-label="Next reward">↗</button></div>
+            <div class="reward-card"><div class="reward-art"><div class="reward-orbit"></div><span>✦</span></div><div class="reward-copy"><small>FIRST CONTACT // TIER 04</small><b>NEBULA<br>WEAPON SKIN</b><div class="progress-track"><i></i></div><span>2,400 / 5,000 XP <em>48%</em></span></div></div>
+            <div class="reward-footer"><span><i class="live-dot"></i> EVENT ENDS IN <b>06D 14H</b></span><button id="rewards-view">VIEW REWARDS →</button></div>
+          </section>
+
+          <section class="module friends-module">
+            <div class="module-heading"><div><small>SQUAD NETWORK</small><h2>FRIENDS IN ACTION <em>03 ONLINE</em></h2></div><button class="small-arrow" data-page="social" aria-label="View friends">↗</button></div>
+            <div class="friends-list">
+              <div class="friend-row"><span class="friend-avatar av-blue">N</span><span class="friend-data"><b>NEBULA_09 <i class="online-mini"></i></b><small>IN TRAINING GROUND</small></span><button class="invite-friend" data-friend="NEBULA_09">INVITE</button></div>
+              <div class="friend-row"><span class="friend-avatar av-purple">V</span><span class="friend-data"><b>VOIDWALKER <i class="online-mini"></i></b><small>IN MATCH // 20V20</small></span><button class="invite-friend" data-friend="VOIDWALKER">SPECTATE</button></div>
+              <div class="friend-row"><span class="friend-avatar av-green">K</span><span class="friend-data"><b>KHEPRI_RISING <i class="online-mini"></i></b><small>IN COMMAND</small></span><button class="invite-friend" data-friend="KHEPRI_RISING">INVITE</button></div>
+            </div>
+            <button class="add-friend" data-page="social">＋ FIND OPERATIVES</button>
+          </section>
+          <section class="module intel-module"><div class="intel-overline">SITUATION REPORT <span>07:42:19 UTC</span></div><div class="intel-head"><span>◉</span><div><small>CALLASO SECTOR // ALERT 04</small><b>RIFT SIGNATURE DETECTED</b></div></div><p>Unidentified vessels crossing the outer perimeter. Report to the training deck for readiness checks.</p><button data-page="training">REVIEW FIELD INTEL <b>↗</b></button></section>
         </div>
       </section>
 
-      <section class="bottom-strip" id="intel">
-        <div class="strip-title"><span class="section-kicker">FIELD INTEL</span><b>FRONTLINE STATUS</b></div>
-        <div class="intel-item"><span class="intel-icon">⌖</span><span><small>ACTIVE OPERATION</small><b>CALLASO — DUSTHAVEN</b></span><span class="intel-live">LIVE</span></div>
-        <div class="intel-item"><span class="intel-icon">◉</span><span><small>FACTION BALANCE</small><b>HUMAN <i>51%</i> / ALLIANCE <i>49%</i></b></span><span class="balance-bar"><i></i></span></div>
-        <div class="intel-item intel-map"><span class="map-lines"></span><span><small>NEXT DEPLOYMENT</small><b id="intel-mode">SELECT A BATTLE SIZE</b></span></div>
+      <section class="page training-page" id="page-training" aria-label="Training ground" hidden>
+        <div class="page-title"><div><small>SIMULATION BAY // LIVE FEED</small><h1>TRAINING <em>GROUND</em></h1><p>Movement, aim, and weapons drills. Your performance data stays on this deck.</p></div><div class="training-status"><i></i> SIMULATION READY <b id="sim-clock">00:00</b></div></div>
+        <div class="training-layout">
+          <div class="sim-wrap">
+            <canvas id="training-canvas" width="1280" height="720" aria-label="First person training range simulation"></canvas>
+            <div class="sim-topline"><span><i></i> CALIBRATION RANGE // BAY 04</span><span>WIND 0.0 <b>▴</b> // CLEAR</span><span class="sim-exit" data-page="command">EXIT SIM <b>×</b></span></div>
+            <div class="sim-bottom-left"><span id="sim-status">SYSTEMS NOMINAL</span><b id="sim-action">READY</b></div>
+            <div class="sim-crosshair" id="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="hit-marker" id="hit-marker">✣</div>
+            <div class="sim-bottom-right"><span>MAG <b id="ammo-count">30</b> <i>/ 120</i></span><span id="weapon-name-hud">VX-14 // ASSAULT</span></div>
+            <div class="touch-controls" aria-label="Touch controls"><div class="move-pad" id="move-pad"><span>MOVE</span><i></i></div><div class="touch-action-stack"><button data-touch="aim">AIM</button><button data-touch="jump">JUMP</button><button data-touch="slide">SLIDE</button><button data-touch="fire">FIRE</button></div></div>
+            <div class="simulation-overlay" id="pause-overlay" hidden><b>SIMULATION PAUSED</b><button id="resume-sim">RESUME DRILL</button></div>
+          </div>
+          <aside class="training-side">
+            <div class="module-heading"><div><small>DRILL CONTROLS</small><h2>FIELD MANUAL</h2></div><span class="module-mark">V.01</span></div>
+            <div class="control-list"><div><kbd>W A S D</kbd><span>MOVE / STRAFE</span></div><div><kbd>MOUSE DRAG / ← →</kbd><span>LOOK / TRACK TARGETS</span></div><div><kbd>SHIFT</kbd><span>SPRINT</span></div><div><kbd>SPACE</kbd><span>JUMP</span></div><div><kbd>C</kbd><span>SLIDE</span></div><div><kbd>RIGHT CLICK</kbd><span>AIM DOWN SIGHTS</span></div><div><kbd>CLICK / F</kbd><span>FIRE WEAPON</span></div><div><kbd>R</kbd><span>RELOAD</span></div><div><kbd>Q</kbd><span>SQUAD COMMS // SHOUT</span></div><div><kbd>1—5 / G</kbd><span>SELECT / THROW DEVICE</span></div><div><kbd>ESC</kbd><span>PAUSE SIMULATION</span></div></div>
+            <div class="drill-readout"><div><small>DRILL SCORE</small><b id="score-count">0000</b></div><div><small>ACCURACY</small><b id="accuracy-count">—%</b></div><div><small>TARGETS HIT</small><b id="hit-count">00</b></div></div>
+            <div class="drill-hint"><span>TACTICAL TIP</span><p id="tactical-tip">Slide from a sprint to clear the lane quickly. Track the moving targets to build accuracy.</p></div>
+            <button class="restart-drill" id="restart-drill">↻ RESET RANGE</button>
+          </aside>
+        </div>
+        <div class="training-quickbar"><span>ACTIVE LOADOUT <b>VX-14 // KINETIC PULSE</b></span><button id="training-arsenal" data-page="arsenal">CHANGE WEAPON <b>↗</b></button><span>RANGE DEVICES <b id="device-count">05 / 05</b></span><button id="open-devices">SELECT DEVICE <b>⌄</b></button></div>
       </section>
-      <footer><span>CLASH RACES AT THE FRONTLINE <b>© 2189</b></span><span>PROTOTYPE BUILD 0.1.0 <i>— CONNECTING WORLDS</i></span></footer>
+
+      <section class="page catalog-page" id="page-species" aria-label="Operative archive" hidden>
+        <div class="page-title"><div><small>GENETIC ARCHIVE // CALLASO ALLIANCE</small><h1>OPERATIVE <em>ARCHIVE</em></h1><p>20 field-ready species skins. Choose a lineage and view its operative profile.</p></div><span class="archive-count"><b id="skin-count">20</b> // SPECIES SKINS</span></div>
+        <div class="catalog-tools"><div class="search-box"><span>⌕</span><input id="species-search" type="search" placeholder="Search species, callsign, traits…" aria-label="Search species"></div><div class="filter-pills" id="species-filters"><button class="selected" data-filter="all">ALL <b>20</b></button><button data-filter="human">HUMAN <b>2</b></button><button data-filter="alliance">ALIEN LINEAGES <b>18</b></button></div></div>
+        <div class="skin-grid" id="skin-grid"></div>
+      </section>
+
+      <section class="page catalog-page" id="page-arsenal" aria-label="Arsenal" hidden>
+        <div class="page-title"><div><small>WEAPON SYSTEMS // GUNSMITH</small><h1>FRONTIER <em>ARSENAL</em></h1><p>50 original weapon platforms across seven classes. Choose a platform to inspect its field stats.</p></div><span class="archive-count"><b id="weapon-count">50</b> // PLATFORMS</span></div>
+          <div class="arsenal-overview"><div class="arsenal-feature"><small>ACTIVE PLATFORM</small><b id="active-weapon-name">VX-14 KINETIC PULSE</b><span id="active-weapon-desc">Modular assault platform · balanced medium range</span><div class="weapon-stats"><span>IMPACT <i><b style="width:76%"></b></i></span><span>CONTROL <i><b style="width:68%"></b></i></span><span>HANDLING <i><b style="width:83%"></b></i></span></div></div><div class="throwable-module"><small>FIELD DEVICES // 05 TYPES</small><div id="throwable-list" class="throwable-list"></div></div></div>
+        <div class="catalog-tools"><div class="search-box"><span>⌕</span><input id="weapon-search" type="search" placeholder="Search arsenal…" aria-label="Search weapons"></div><div class="filter-pills weapon-filters" id="weapon-filters"><button class="selected" data-filter="all">ALL <b>50</b></button><button data-filter="ASSAULT">ASSAULT <b>15</b></button><button data-filter="SMG">SMG <b>8</b></button><button data-filter="SHOTGUN">SHOTGUN <b>6</b></button><button data-filter="SNIPER">SNIPER <b>8</b></button><button data-filter="LMG">SUPPORT <b>5</b></button><button data-filter="MARKSMAN">MARKSMAN <b>4</b></button><button data-filter="SIDEARM">SIDEARM <b>4</b></button></div></div>
+        <div class="weapon-grid" id="weapon-grid"></div>
+      </section>
+
+      <section class="page social-page" id="page-social" aria-label="Social command center" hidden>
+        <div class="page-title"><div><small>ALLIANCE NETWORK // GLOBAL</small><h1>SOCIAL <em>COMMAND</em></h1><p>Your active squad, invites, and incoming field dispatches.</p></div><button class="cta-primary" id="add-operative">＋ ADD OPERATIVE</button></div>
+        <div class="social-grid"><section class="module"><div class="module-heading"><div><small>SQUAD NETWORK // 03 ACTIVE</small><h2>FRIENDS IN ACTION</h2></div><button class="small-arrow" id="social-refresh">↻</button></div><div id="social-friends" class="social-friends"></div></section><section class="module"><div class="module-heading"><div><small>SECURE CHANNEL // 02 NEW</small><h2>NOTIFICATIONS</h2></div><button class="small-arrow" id="mark-read">✓</button></div><div class="dispatch-list" id="dispatch-list"></div></section></div>
+        <section class="module room-module"><div class="module-heading"><div><small>OPEN BATTLE ROOMS</small><h2>GLOBAL DEPLOYMENT BOARD</h2></div><span class="live-tag">LIVE PREVIEW</span></div><div class="room-board" id="room-board"></div><button class="cta-primary" id="social-create-room">CREATE A ROOM <b>＋</b></button></section>
+      </section>
+      <footer class="global-footer"><span>CLASH // RACES AT THE FRONTLINE <b>BUILD 0.2.0</b></span><span>PROTOTYPE SIMULATION <i>— NO LIVE MATCHMAKING</i></span></footer>
     </main>
   </div>
 
-  <dialog id="action-dialog" class="action-dialog">
-    <form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form>
-    <div class="dialog-kicker">CALLASO COMMAND // SECURE CHANNEL</div>
-    <h2 id="dialog-title">DEPLOYMENT</h2>
-    <div id="dialog-body"></div>
-  </dialog>
+  <dialog id="ui-dialog" class="ui-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form><small class="dialog-kicker">CALLASO COMMAND // SECURE CHANNEL</small><h2 id="dialog-title">NOTICE</h2><div id="dialog-content"></div></dialog>
   <script src="app.js"></script>
 </body>
 </html>
